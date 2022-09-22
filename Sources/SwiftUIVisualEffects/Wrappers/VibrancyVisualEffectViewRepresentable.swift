@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct _VibrancyVisualEffectViewRepresentable<Content: View>: UIViewRepresentable {
+struct _VibrancyVisualEffectViewRepresentable<Content: View>: NSViewRepresentable {
 	/// - Warning: `content`'s intrinsic content size will be lost.
 	init(content: Content) {
 		self.content = content
@@ -14,13 +14,13 @@ struct _VibrancyVisualEffectViewRepresentable<Content: View>: UIViewRepresentabl
 		Coordinator(content: content)
 	}
 	
-	func makeUIView(context: Context) -> UIVisualEffectView {
+	func makeNSView(context: Context) -> NSVisualEffectView {
 		context.coordinator.configureVisualEffectView(from: context)
 		
 		return context.coordinator.visualEffectView
 	}
 	
-	func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+	func updateNSView(_ uiView: NSVisualEffectView, context: Context) {
 		context.coordinator.configureVisualEffectView(from: context)
 	}
 	
@@ -29,10 +29,10 @@ struct _VibrancyVisualEffectViewRepresentable<Content: View>: UIViewRepresentabl
 
 extension _VibrancyVisualEffectViewRepresentable {
 	final class Coordinator {
-		let visualEffectView = UIVisualEffectView()
+		let visualEffectView = NSVisualEffectView()
 		
 		init(content: Content) {
-			let hostingController = UIHostingController(rootView: content)
+			let hostingController = NSHostingController(rootView: content)
 			hostingController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 			hostingController.view.backgroundColor = nil
 			
@@ -40,13 +40,13 @@ extension _VibrancyVisualEffectViewRepresentable {
 		}
 		
 		func configureVisualEffectView(from context: Context) {
-			let blurEffect = UIBlurEffect(style: context.environment.blurEffectStyle)
+			let blurEffect = NSBlurEffect(style: context.environment.blurEffectStyle)
 			
 			// Set `visualEffectView`'s `effect`.
 			if let vibrancyEffectStyle = context.environment.vibrancyEffectStyle {
-				visualEffectView.effect = UIVibrancyEffect(blurEffect: blurEffect, style: vibrancyEffectStyle)
+				visualEffectView.effect = NSVibrancyEffect(blurEffect: blurEffect, style: vibrancyEffectStyle)
 			} else {
-				visualEffectView.effect = UIVibrancyEffect(blurEffect: blurEffect)
+				visualEffectView.effect = NSVibrancyEffect(blurEffect: blurEffect)
 			}
 		}
 	}

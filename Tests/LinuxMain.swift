@@ -1,4 +1,4 @@
 /**
-* SwiftUIVisualEffects
+* SwiftNSVisualEffects
 */
 

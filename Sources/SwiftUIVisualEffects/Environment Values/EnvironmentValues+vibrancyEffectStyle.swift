@@ -1,11 +1,11 @@
 /**
-* SwiftUIVisualEffects
+* SwiftNSVisualEffects
 */
 
 import SwiftUI
 
 extension EnvironmentValues {
-	var vibrancyEffectStyle: UIVibrancyEffectStyle? {
+	var vibrancyEffectStyle: NSVibrancyEffectStyle? {
 		get {
 			self[VibrancyEffectStyleKey.self]
 		}

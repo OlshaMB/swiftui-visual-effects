@@ -1,8 +1,8 @@
 /**
-* SwiftUIVisualEffects
+* SwiftNSVisualEffects
 */
 
 import XCTest
-@testable import SwiftUIVisualEffects
+@testable import SwiftNSVisualEffects
 
-final class SwiftUIVisualEffectsTests: XCTestCase {}
+final class SwiftNSVisualEffectsTests: XCTestCase {}

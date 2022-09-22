@@ -20,7 +20,7 @@ public extension View {
 	.blurEffectStyle(.systemMaterial)
 	```
 	*/
-	func blurEffectStyle(_ style: UIBlurEffect.Style) -> some View {
+	func blurEffectStyle(_ style: NSBlurEffect.Style) -> some View {
 		environment(\.blurEffectStyle, style)
 	}
 }

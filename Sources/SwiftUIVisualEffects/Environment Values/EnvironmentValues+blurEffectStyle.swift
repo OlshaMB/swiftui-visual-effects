@@ -5,7 +5,7 @@
 import SwiftUI
 
 extension EnvironmentValues {
-	var blurEffectStyle: UIBlurEffect.Style {
+	var blurEffectStyle: NSBlurEffect.Style {
 		get {
 			self[BlurEffectStyleKey.self]
 		}

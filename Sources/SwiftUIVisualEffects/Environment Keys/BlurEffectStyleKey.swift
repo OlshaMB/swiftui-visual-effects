@@ -5,5 +5,5 @@
 import SwiftUI
 
 struct BlurEffectStyleKey: EnvironmentKey {
-	static var defaultValue: UIBlurEffect.Style = .systemMaterial // (Per the human-interface guidelines.)
+	static var defaultValue: NSBlurEffect.Style = .systemMaterial // (Per the human-interface guidelines.)
 }

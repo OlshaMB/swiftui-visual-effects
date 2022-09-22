@@ -2,7 +2,7 @@
 * SwiftUIVisualEffects
 */
 
-import SwiftUI
+import SwiftNS
 
 /// Creates a vibrancy effect.
 public struct VibrancyEffectModifier: ViewModifier {

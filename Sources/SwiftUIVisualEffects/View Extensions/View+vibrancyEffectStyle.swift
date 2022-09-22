@@ -25,7 +25,7 @@ public extension View {
 	}
 	```
 	*/
-	func vibrancyEffectStyle(_ style: UIVibrancyEffectStyle) -> some View {
+	func vibrancyEffectStyle(_ style: NSVibrancyEffectStyle) -> some View {
 		environment(\.vibrancyEffectStyle, style)
 	}
 }
